@@ -72,10 +72,6 @@ public class Item {
         return availability;
     }
 
-    public void setAvailability(String availability) {
-        this.availability = true;
-    }
-
     public String getItemName() {
         return itemName;
     }
@@ -91,4 +87,6 @@ public class Item {
     public void setCost(Integer cost) {
         this.cost = cost;
     }
+
+
 }

@@ -30,10 +30,10 @@ public class ItemController {
         return DaoItem.findById(id);
     }
 
-//    @GetMapping("/findByName")
-//    public Optional<Item> findByName(@RequestParam String name) {
-//        return DaoItem.findByName(name);
-//    }
+    @GetMapping("/findByName")
+    public List<Item> findByName(@RequestParam String name) {
+        return DaoItem.findAll();
+    }
 
     @PostMapping("/add")
     public Item save(@RequestParam boolean availability,
@@ -42,7 +42,9 @@ public class ItemController {
                       {
 
         Item item = new Item(availability,itemName,cost);
-
+        item.setAvailability(availability);
+        item.setItemName(itemName);
+        item.setCost(cost);
         return DaoItem.save(item);
     }
 

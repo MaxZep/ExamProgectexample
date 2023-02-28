@@ -23,11 +23,15 @@ public class DbDaoItem implements IDaoItem{
         return repository.findById(id);
     }
 
-//    @Override
-//    public Optional<Item> findByName(String name) {
-//
-//        return repository.findByName();
-//    }
+    @Override
+    public List<Item> findByName(String name) {
+        Item item = new Item();
+        if(item.getItemName().equals(name)){
+
+        return (List<Item>) repository.findAll();
+
+    }
+        else return null ;}
 
 
     @Override

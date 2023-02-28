@@ -14,7 +14,7 @@ public interface IDaoItem {
     Item update(Item item);//обновить
     List<Item> findAll();//получение списка товаров
     Optional<Item> findById(Integer Id);//получить товар по id
-   // Optional<Item> findByName(String name);//поиск по названию
+    Object findByName(String name);//поиск по названию
 
 
 

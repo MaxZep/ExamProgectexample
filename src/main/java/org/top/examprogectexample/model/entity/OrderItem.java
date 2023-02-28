@@ -11,15 +11,15 @@ import jakarta.persistence.*;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         Integer id;
-
         @Column
         Integer amount;
+
     //много заказов - один товар
         @ManyToOne (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
         @JsonIgnore
         @JoinColumn(name = "item_id", nullable = false)
         private Item item;
-    // много товаров - один заказ
+   //  много товаров - один заказ
         @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
         @JsonIgnore
         @JoinColumn(name = "order_id", nullable = false)

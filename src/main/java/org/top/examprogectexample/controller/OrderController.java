@@ -21,10 +21,11 @@ public class OrderController {
         return "order pong";
     }
     @PostMapping("/add")
-    public Order addOrder( @RequestParam Integer id,
-                           @RequestParam String clientName,
-                           @RequestParam Date date) {
-        Order order=new Order(id,clientName,date);
+    public Order addOrder( @RequestParam String clientName,
+                           @RequestParam Integer date) {
+        Order order=new Order(clientName,date);
+        order.setClientName(clientName);
+        order.setDate(date);
         return DaoOrder.addOrder(order);
     }
     @GetMapping("/all")
